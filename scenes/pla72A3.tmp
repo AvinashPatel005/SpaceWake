@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=3 uid="uid://rh262skwd728"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dpc7r"]
+[ext_resource type="PackedScene" uid="uid://dljeqv5o1gkm8" path="res://scenes/interact_ray.tscn" id="2_m5g3d"]
+[ext_resource type="PackedScene" uid="uid://d187ej6mlte7w" path="res://assets/guns/models/Pistol_3.gltf" id="3_sgilr"]
+[ext_resource type="Texture2D" uid="uid://cx34e3hdhdqtf" path="res://assets/crosshair.png" id="3_tsbyb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mk6mb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p04b"]
+albedo_color = Color(0.548046, 0, 0.10795, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lrsgq"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_y4dst"]
+
+[sub_resource type="Animation" id="Animation_6fmco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Head/Camera3D:attributes:exposure_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Neck/Head/Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u3o4x"]
+resource_name = "start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Head/Camera3D:attributes:exposure_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.1, 2.4, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1, 1.9, 2.9, 3.5, 4.4, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(-0.349066, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Neck/Head/Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.8, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"player_ready"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c2srd"]
+_data = {
+"RESET": SubResource("Animation_6fmco"),
+"start": SubResource("Animation_u3o4x")
+}
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_dpc7r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_mk6mb")
+surface_material_override/0 = SubResource("StandardMaterial3D_4p04b")
+
+[node name="NormalCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_lrsgq")
+
+[node name="SneakCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_lrsgq")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Head" type="Node3D" parent="Neck"]
+
+[node name="Camera3D" type="Camera3D" parent="Neck/Head"]
+attributes = SubResource("CameraAttributesPractical_y4dst")
+
+[node name="InteractRay" parent="Neck/Head/Camera3D" instance=ExtResource("2_m5g3d")]
+
+[node name="WeaponHolder" type="Node3D" parent="Neck/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135, -0.15, -0.24)
+
+[node name="Pistol" parent="Neck/Head/Camera3D/WeaponHolder" instance=ExtResource("3_sgilr")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 2, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c2srd")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.5
+offset_top = -13.0
+offset_right = 12.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tsbyb")
+expand_mode = 1

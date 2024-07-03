@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://mhfhcljfd2xo"]
+
+[ext_resource type="Texture2D" uid="uid://cjvnpv4uxtgpi" path="res://assets/station/Textures/colormap.png" id="2_46vdk"]
+[ext_resource type="Script" path="res://scripts/wall_switch.gd" id="2_lk5h0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bobf"]
+size = Vector3(0.0939941, 0.202255, 0.0751953)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mapnc"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_46vdk")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_32kip"]
+_surfaces = [{
+"aabb": AABB(-0.05, 0, -0.0125, 0.1, 0.2, 0.025),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 4, 0, 6, 0, 3, 0, 3, 0, 1, 0, 4, 0, 7, 0, 5, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 2, 0, 8, 0, 8, 0, 6, 0, 7, 0, 9, 0, 8, 0, 2, 0, 8, 0, 10, 0, 6, 0, 2, 0, 3, 0, 9, 0, 10, 0, 11, 0, 6, 0, 3, 0, 11, 0, 9, 0, 3, 0, 6, 0, 11, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 31, 254, 255, 0, 0, 0, 0, 255, 223, 254, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 223, 254, 255, 0, 0, 255, 255, 255, 31, 254, 255, 0, 0, 255, 191, 255, 63, 254, 255, 0, 0, 255, 63, 255, 63, 254, 255, 0, 0, 255, 191, 255, 191, 254, 255, 0, 0, 255, 63, 255, 191, 254, 255, 0, 0, 255, 63, 255, 63, 255, 255, 0, 0, 255, 63, 255, 191, 254, 255, 0, 0, 255, 191, 255, 63, 255, 255, 0, 0, 255, 191, 255, 191, 254, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_etb1s"]
+resource_name = "wall-switch_wall-switch"
+_surfaces = [{
+"aabb": AABB(-0.05, 0, -0.0125, 0.1, 0.2, 0.025),
+"attribute_data": PackedByteArray(255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 50, 243, 255, 87, 204, 204, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 204, 204, 255, 87, 50, 243, 255, 87, 204, 204, 255, 87, 204, 204, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 50, 243, 255, 87, 50, 243, 255, 87, 50, 243, 255, 87, 203, 236, 255, 87, 50, 243, 255, 87, 204, 204, 255, 87, 203, 236, 255, 87, 50, 211, 255, 87, 204, 204, 255, 87, 50, 211, 255, 55, 152, 249, 255, 55, 152, 249, 255, 55, 152, 249, 255, 55, 152, 249),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 10, 0, 8, 0, 9, 0, 9, 0, 11, 0, 10, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0, 18, 0, 16, 0, 17, 0, 17, 0, 19, 0, 18, 0, 20, 0, 17, 0, 16, 0, 17, 0, 21, 0, 19, 0, 16, 0, 22, 0, 20, 0, 21, 0, 23, 0, 19, 0, 22, 0, 23, 0, 20, 0, 22, 0, 19, 0, 23, 0, 26, 0, 24, 0, 25, 0, 25, 0, 27, 0, 26, 0),
+"material": SubResource("StandardMaterial3D_mapnc"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 31, 254, 255, 255, 191, 0, 0, 255, 223, 254, 255, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 223, 254, 255, 255, 191, 255, 255, 255, 31, 254, 255, 255, 191, 255, 255, 255, 223, 254, 255, 255, 143, 0, 0, 255, 223, 254, 255, 255, 143, 255, 255, 255, 255, 0, 0, 255, 159, 0, 0, 255, 255, 0, 0, 255, 159, 255, 255, 0, 0, 0, 0, 255, 159, 0, 0, 0, 0, 0, 0, 255, 159, 255, 255, 255, 31, 254, 255, 255, 143, 0, 0, 255, 31, 254, 255, 255, 143, 0, 0, 255, 31, 254, 255, 255, 143, 255, 191, 255, 63, 254, 255, 0, 128, 255, 255, 255, 31, 254, 255, 255, 143, 255, 255, 255, 223, 254, 255, 255, 143, 255, 63, 255, 63, 254, 255, 0, 128, 255, 191, 255, 191, 254, 255, 0, 128, 0, 0, 255, 223, 254, 255, 255, 143, 255, 63, 255, 191, 254, 255, 0, 128, 255, 63, 255, 63, 255, 255, 0, 128, 255, 63, 255, 191, 254, 255, 0, 128, 255, 191, 255, 63, 255, 255, 0, 128, 255, 191, 255, 191, 254, 255, 0, 128, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 127, 255, 255, 0, 0, 255, 127, 255, 255, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_32kip")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10f5k"]
+albedo_color = Color(0.792178, 0.0942944, 0.0627903, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tytgf"]
+albedo_color = Color(0.111813, 0.770186, 0.282514, 1)
+emission_enabled = true
+emission = Color(0, 0.603922, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoy6u"]
+albedo_color = Color(0.0235294, 0.372549, 0.831373, 1)
+emission_enabled = true
+emission = Color(0.0234701, 0.37255, 0.833054, 1)
+
+[node name="WallSwitch" type="StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("2_lk5h0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0992355, 0)
+shape = SubResource("BoxShape3D_6bobf")
+
+[node name="wall-switch" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_etb1s")
+skeleton = NodePath("")
+
+[node name="Disabled" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100476, 0.0125033)
+visible = false
+size = Vector3(0.0478516, 0.097168, 0.001)
+material = SubResource("StandardMaterial3D_10f5k")
+
+[node name="Enabled" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100476, 0.0125033)
+visible = false
+size = Vector3(0.0478516, 0.097168, 0.001)
+material = SubResource("StandardMaterial3D_tytgf")
+
+[node name="Closed" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100476, 0.0125033)
+visible = false
+size = Vector3(0.0478516, 0.097168, 0.001)
+material = SubResource("StandardMaterial3D_aoy6u")

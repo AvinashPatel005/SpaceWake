@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnoenm17ctxbm"]
+
+[ext_resource type="PackedScene" uid="uid://s75wia15noh8" path="res://assets/station/rail-narrow.glb" id="1_8v6na"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2i4se"]
+size = Vector3(0.451599, 0.400269, 0.029541)
+
+[node name="RailNarrow" instance=ExtResource("1_8v6na")]
+
+[node name="rail-narrow" parent="." index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rail-narrow" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rail-narrow/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00228882, 0.200134, 0)
+shape = SubResource("BoxShape3D_2i4se")

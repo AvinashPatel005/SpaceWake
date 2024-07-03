@@ -1,0 +1,238 @@
+[gd_scene load_steps=17 format=3 uid="uid://cn1srdsufvw4x"]
+
+[ext_resource type="PackedScene" uid="uid://bpg7daat4l8qf" path="res://assets/station/door-single-closed.glb" id="1_5aenw"]
+[ext_resource type="Script" path="res://scripts/door_single.gd" id="2_4w4r7"]
+[ext_resource type="Texture2D" uid="uid://cjvnpv4uxtgpi" path="res://assets/station/Textures/colormap.png" id="2_60nj8"]
+[ext_resource type="AudioStream" uid="uid://c64s7aip8keli" path="res://assets/sfx/door/forceField_000.ogg" id="4_7wuqe"]
+[ext_resource type="AudioStream" uid="uid://dafjtvx6w6aom" path="res://assets/sfx/door/forceField_002.ogg" id="5_nxjrh"]
+[ext_resource type="AudioStream" uid="uid://bgl1p4fppng0c" path="res://assets/sfx/door/forceField_003.ogg" id="6_bjwfk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ay6ru"]
+size = Vector3(0.40332, 0.698082, 0.197754)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkc5"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_60nj8")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dyp43"]
+_surfaces = [{
+"aabb": AABB(-0.2, 0, -0.05, 0.40001, 0.70001, 0.1),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 4, 0, 0, 0, 2, 0, 2, 0, 5, 0, 4, 0, 7, 0, 6, 0, 4, 0, 4, 0, 5, 0, 7, 0, 7, 0, 3, 0, 1, 0, 1, 0, 6, 0, 7, 0, 6, 0, 1, 0, 8, 0, 8, 0, 4, 0, 6, 0, 9, 0, 8, 0, 1, 0, 1, 0, 0, 0, 9, 0, 8, 0, 10, 0, 4, 0, 10, 0, 8, 0, 9, 0, 0, 0, 11, 0, 9, 0, 0, 0, 4, 0, 11, 0, 10, 0, 11, 0, 4, 0, 9, 0, 11, 0, 10, 0, 13, 0, 12, 0, 2, 0, 12, 0, 14, 0, 2, 0, 13, 0, 2, 0, 3, 0, 5, 0, 2, 0, 14, 0, 3, 0, 7, 0, 13, 0, 5, 0, 14, 0, 15, 0, 7, 0, 5, 0, 15, 0, 15, 0, 13, 0, 7, 0, 13, 0, 16, 0, 17, 0, 12, 0, 13, 0, 17, 0, 11, 0, 12, 0, 17, 0, 17, 0, 9, 0, 11, 0, 14, 0, 12, 0, 11, 0, 11, 0, 10, 0, 14, 0, 14, 0, 10, 0, 8, 0, 8, 0, 18, 0, 14, 0, 18, 0, 19, 0, 14, 0, 19, 0, 15, 0, 14, 0, 19, 0, 16, 0, 13, 0, 13, 0, 15, 0, 19, 0, 8, 0, 10, 0, 9, 0, 11, 0, 9, 0, 10, 0, 17, 0, 16, 0, 19, 0, 19, 0, 18, 0, 17, 0, 8, 0, 9, 0, 17, 0, 17, 0, 18, 0, 8, 0),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray(253, 255, 254, 255, 0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 253, 255, 254, 255, 255, 255, 0, 0, 253, 255, 0, 0, 255, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 63, 255, 127, 0, 0, 0, 0, 254, 191, 255, 127, 0, 0, 0, 0, 255, 63, 108, 219, 0, 0, 0, 0, 254, 191, 108, 219, 0, 0, 0, 0, 254, 191, 108, 219, 255, 255, 0, 0, 254, 191, 146, 36, 255, 255, 0, 0, 255, 63, 108, 219, 255, 255, 0, 0, 255, 63, 146, 36, 255, 255, 0, 0, 254, 191, 146, 36, 255, 127, 0, 0, 254, 191, 255, 127, 255, 127, 0, 0, 255, 63, 255, 127, 255, 127, 0, 0, 255, 63, 146, 36, 255, 127, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hnepr"]
+resource_name = "door-single-closed_door-single-closed"
+_surfaces = [{
+"aabb": AABB(-0.2, 0, -0.05, 0.40001, 0.70001, 0.1),
+"attribute_data": PackedByteArray(255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 255, 223, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 255, 223, 255, 87, 101, 198, 255, 87, 182, 205, 255, 87, 182, 205, 255, 87, 182, 205, 255, 87, 101, 198, 255, 87, 72, 242, 255, 87, 182, 205, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 72, 242, 255, 55, 72, 242, 255, 55, 255, 223, 255, 55, 72, 242, 255, 55, 182, 205, 255, 55, 182, 205, 255, 55, 255, 223, 255, 55, 182, 205, 255, 55, 182, 205, 255, 55, 182, 205, 255, 55, 182, 205, 255, 55, 182, 205, 255, 55, 255, 223, 255, 55, 182, 205, 255, 55, 255, 223, 255, 55, 72, 242, 255, 55, 72, 242, 255, 55, 72, 242, 255, 55, 72, 242, 255, 55, 72, 242, 255, 55, 72, 242, 255, 55, 182, 205, 255, 55, 255, 223, 255, 55, 255, 223, 255, 55, 182, 205, 255, 55, 72, 178, 255, 55, 72, 178, 255, 55, 255, 159, 255, 55, 255, 159, 255, 55, 255, 159, 255, 55, 255, 159, 255, 55, 255, 159, 255, 55, 255, 159),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 10, 0, 8, 0, 9, 0, 9, 0, 11, 0, 10, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0, 18, 0, 16, 0, 17, 0, 17, 0, 19, 0, 18, 0, 20, 0, 17, 0, 16, 0, 16, 0, 21, 0, 20, 0, 17, 0, 22, 0, 19, 0, 22, 0, 17, 0, 20, 0, 21, 0, 23, 0, 20, 0, 21, 0, 19, 0, 23, 0, 22, 0, 23, 0, 19, 0, 20, 0, 23, 0, 22, 0, 26, 0, 24, 0, 25, 0, 24, 0, 27, 0, 25, 0, 26, 0, 25, 0, 28, 0, 29, 0, 25, 0, 27, 0, 28, 0, 30, 0, 26, 0, 29, 0, 27, 0, 31, 0, 30, 0, 29, 0, 31, 0, 31, 0, 26, 0, 30, 0, 34, 0, 32, 0, 33, 0, 35, 0, 34, 0, 33, 0, 36, 0, 35, 0, 33, 0, 33, 0, 37, 0, 36, 0, 40, 0, 38, 0, 39, 0, 39, 0, 41, 0, 40, 0, 44, 0, 42, 0, 43, 0, 43, 0, 45, 0, 44, 0, 45, 0, 46, 0, 44, 0, 46, 0, 47, 0, 44, 0, 50, 0, 48, 0, 49, 0, 49, 0, 51, 0, 50, 0, 54, 0, 52, 0, 53, 0, 55, 0, 53, 0, 52, 0, 58, 0, 56, 0, 57, 0, 57, 0, 59, 0, 58, 0, 62, 0, 60, 0, 61, 0, 61, 0, 63, 0, 62, 0),
+"material": SubResource("StandardMaterial3D_dqkc5"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray(253, 255, 254, 255, 0, 0, 255, 191, 253, 255, 0, 0, 0, 0, 255, 191, 253, 255, 254, 255, 255, 255, 255, 191, 253, 255, 0, 0, 255, 255, 255, 191, 253, 255, 254, 255, 0, 0, 255, 255, 253, 255, 254, 255, 255, 255, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 254, 255, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 254, 255, 255, 255, 255, 191, 253, 255, 0, 0, 255, 255, 255, 191, 253, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 253, 255, 0, 0, 0, 0, 255, 255, 255, 63, 255, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 254, 191, 255, 127, 0, 0, 255, 255, 253, 255, 254, 255, 0, 0, 255, 255, 255, 63, 108, 219, 0, 0, 255, 255, 254, 191, 108, 219, 0, 0, 255, 255, 254, 191, 108, 219, 255, 255, 0, 128, 253, 255, 254, 255, 255, 255, 0, 128, 254, 191, 146, 36, 255, 255, 0, 128, 255, 63, 108, 219, 255, 255, 0, 128, 253, 255, 0, 0, 255, 255, 0, 128, 0, 0, 254, 255, 255, 255, 0, 128, 0, 0, 0, 0, 255, 255, 0, 128, 255, 63, 146, 36, 255, 255, 0, 128, 254, 191, 146, 36, 255, 127, 252, 197, 254, 191, 255, 127, 255, 127, 255, 191, 254, 191, 146, 36, 255, 255, 252, 197, 254, 191, 108, 219, 255, 255, 252, 197, 254, 191, 108, 219, 0, 0, 252, 197, 254, 191, 255, 127, 0, 0, 255, 191, 254, 191, 108, 219, 255, 255, 252, 197, 254, 191, 108, 219, 0, 0, 252, 197, 255, 63, 108, 219, 255, 255, 252, 197, 255, 63, 108, 219, 0, 0, 252, 197, 255, 63, 108, 219, 0, 0, 252, 197, 255, 63, 255, 127, 0, 0, 255, 191, 255, 63, 108, 219, 255, 255, 252, 197, 255, 63, 255, 127, 255, 127, 255, 191, 255, 63, 146, 36, 255, 127, 252, 197, 255, 63, 146, 36, 255, 255, 252, 197, 254, 191, 146, 36, 255, 127, 170, 233, 254, 191, 146, 36, 255, 255, 170, 233, 255, 63, 146, 36, 255, 127, 170, 233, 255, 63, 146, 36, 255, 255, 170, 233, 255, 63, 108, 219, 0, 0, 0, 0, 254, 191, 255, 127, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 0, 0, 254, 191, 108, 219, 0, 0, 0, 0, 254, 191, 146, 36, 255, 127, 0, 128, 255, 63, 146, 36, 255, 127, 0, 128, 254, 191, 255, 127, 255, 127, 255, 159, 255, 63, 255, 127, 255, 127, 255, 159, 254, 191, 255, 127, 0, 0, 255, 255, 254, 191, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 0, 0, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 254, 156, 0, 198, 255, 127, 255, 255, 254, 156, 0, 198, 1, 70, 255, 226, 1, 70, 255, 226, 255, 127, 255, 255, 254, 57, 254, 156, 254, 57, 254, 156, 255, 28, 1, 70, 255, 28, 1, 70, 0, 99, 254, 57, 255, 127, 0, 0, 0, 99, 254, 57, 255, 127, 0, 0, 253, 185, 255, 28, 253, 185, 255, 28, 9, 106, 4, 181, 9, 106, 4, 181, 4, 53, 246, 21, 4, 53, 246, 21, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 127, 255, 191, 255, 127, 124, 165, 255, 127, 255, 191, 255, 127, 124, 165)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dyp43")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xurg3"]
+_surfaces = [{
+"aabb": AABB(-0.05, 0, -0.05, 0.10001, 0.3, 0.10001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 1, 0, 0, 0, 4, 0, 4, 0, 5, 0, 1, 0, 1, 0, 5, 0, 6, 0, 6, 0, 3, 0, 1, 0, 6, 0, 7, 0, 2, 0, 2, 0, 3, 0, 6, 0),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(248, 255, 0, 0, 248, 255, 0, 0, 0, 0, 84, 85, 248, 255, 0, 0, 248, 255, 255, 255, 248, 255, 0, 0, 0, 0, 169, 170, 248, 255, 0, 0, 248, 255, 0, 0, 0, 0, 0, 0, 0, 0, 84, 85, 0, 0, 0, 0, 0, 0, 169, 170, 0, 0, 0, 0, 248, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jrjx7"]
+resource_name = "door-single-closed_Group"
+_surfaces = [{
+"aabb": AABB(-0.05, 0, -0.05, 0.10001, 0.3, 0.10001),
+"attribute_data": PackedByteArray(255, 87, 152, 249, 255, 87, 135, 232, 255, 87, 101, 198, 255, 87, 118, 215, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 135, 232, 255, 87, 135, 232, 255, 87, 135, 232, 255, 87, 118, 215, 255, 87, 135, 232, 255, 87, 118, 215, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 118, 215, 255, 87, 118, 215),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 10, 0, 8, 0, 9, 0, 9, 0, 11, 0, 10, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0),
+"material": SubResource("StandardMaterial3D_dqkc5"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray(248, 255, 0, 0, 248, 255, 0, 128, 0, 0, 84, 85, 248, 255, 0, 128, 248, 255, 255, 255, 248, 255, 0, 128, 0, 0, 169, 170, 248, 255, 0, 128, 248, 255, 0, 0, 248, 255, 252, 197, 248, 255, 0, 0, 0, 0, 252, 197, 0, 0, 84, 85, 248, 255, 140, 193, 0, 0, 84, 85, 0, 0, 140, 193, 0, 0, 84, 85, 0, 0, 140, 193, 0, 0, 169, 170, 0, 0, 140, 193, 0, 0, 84, 85, 248, 255, 140, 193, 0, 0, 169, 170, 248, 255, 140, 193, 248, 255, 255, 255, 0, 0, 252, 197, 248, 255, 255, 255, 248, 255, 252, 197, 0, 0, 169, 170, 0, 0, 140, 193, 0, 0, 169, 170, 248, 255, 140, 193, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 1, 70, 255, 226, 1, 70, 255, 226, 145, 91, 200, 237, 145, 91, 200, 237, 145, 91, 200, 237, 54, 146, 145, 219, 145, 91, 200, 237, 54, 146, 145, 219, 254, 156, 0, 198, 254, 156, 0, 198, 54, 146, 145, 219, 54, 146, 145, 219)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xurg3")
+
+[sub_resource type="Animation" id="Animation_7yweb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door-single-closed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.061982)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door-single-closed2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.038018)]
+}
+
+[sub_resource type="Animation" id="Animation_d75vl"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door-single-closed2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.7, -0.038), Vector3(0, 0, -0.038)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door-single-closed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.7, 0.062), Vector3(0, 0, 0.062)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_7wuqe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_npbkv"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door-single-closed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.061982), Vector3(0, -0.7, 0.062)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door-single-closed2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.038018), Vector3(0, -0.7, -0.038)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_nxjrh")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bjwfk")
+}],
+"times": PackedFloat32Array(0, 0.0001)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uvqtb"]
+_data = {
+"RESET": SubResource("Animation_7yweb"),
+"close": SubResource("Animation_d75vl"),
+"open": SubResource("Animation_npbkv")
+}
+
+[node name="DoorSingleClosed" instance=ExtResource("1_5aenw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("2_4w4r7")
+
+[node name="door-single-closed" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.061982)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door-single-closed" index="1"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door-single-closed/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350682, -0.048584)
+shape = SubResource("BoxShape3D_ay6ru")
+
+[node name="door-single-closed2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.038018)
+mesh = SubResource("ArrayMesh_hnepr")
+skeleton = NodePath("")
+
+[node name="Group" type="MeshInstance3D" parent="door-single-closed2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.2, 0)
+mesh = SubResource("ArrayMesh_jrjx7")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_uvqtb")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+volume_db = -18.612
+pitch_scale = 1.44
+bus = &"SFX"

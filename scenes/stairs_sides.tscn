@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyjm1dh2x3qbh"]
+
+[ext_resource type="PackedScene" uid="uid://cbhcmbgy2twpb" path="res://assets/building/stairs-sides.glb" id="1_jp425"]
+
+[node name="StairsSides" instance=ExtResource("1_jp425")]
+
+[node name="stairs-sides" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.141592, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stairs-sides" index="2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="stairs-sides/StaticBody3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.09759e-10, 0, -0.0185251)
+depth = 1.5
+polygon = PackedVector2Array(0.991482, 1.00399, 0.869774, 1.0121, 0.504649, 1.28797, 0.366714, 1.29609, -0.00652454, 1.61253, -0.120119, 1.60441, -0.493357, 1.91274, -0.623179, 1.90463, -1.00453, 2.21295, -1.11813, 2.21295, -1.50759, 2.50505, -1.62119, 2.49694, -1.71044, 2.56185, -2.01877, 2.55374, -2.01065, 2.36712, -1.77535, 2.35089, 1.79476, 0.200712, 1.81098, 0.00597924, 2.006, 0, 2.0544, 0.267119, 1.86778, 0.403559, 1.48643, 0.703772, 1.34849, 0.695658)
+margin = 4.02

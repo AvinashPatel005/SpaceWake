@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://drlj1u1fol06w"]
+
+[ext_resource type="PackedScene" uid="uid://ma1526c1rbbj" path="res://assets/station/rail.glb" id="1_e0hd5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8o2j4"]
+size = Vector3(0.950195, 0.399658, 0.0563965)
+
+[node name="Rail" instance=ExtResource("1_e0hd5")]
+
+[node name="rail" parent="." index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rail" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rail/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199829, 0)
+shape = SubResource("BoxShape3D_8o2j4")

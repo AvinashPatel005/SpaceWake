@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://l6ndlb3sm2mc"]
+
+[ext_resource type="PackedScene" uid="uid://dq47rjkb0l85u" path="res://assets/station/stairs.glb" id="1_dnpxq"]
+
+[node name="stairs2" instance=ExtResource("1_dnpxq")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="stairs" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)

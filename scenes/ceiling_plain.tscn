@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1u82sokffbx2"]
+
+[ext_resource type="PackedScene" uid="uid://d4nbr12rf030s" path="res://scenes/floor_plain.tscn" id="1_24fd2"]
+
+[node name="CeilingPlain" type="Node3D"]
+
+[node name="FloorPlain" parent="." instance=ExtResource("1_24fd2")]
+transform = Transform3D(1, 0, 0, 0, 0.165, 0, 0, 0, 1, 0, 0, 0)
